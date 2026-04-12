@@ -2,7 +2,7 @@ import sqlite3
 import datetime
 import uuid
 
-DB_PATH = "rice_bug.db"
+DB_PATH = "server_data/rice_bug.db"
 
 def init_db():
     conn = sqlite3.connect(DB_PATH)

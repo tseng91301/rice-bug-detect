@@ -13,6 +13,5 @@ htmlcov/
 .gitignore
 .dockerignore
 Dockerfile
-rice_bug.db
-uploads/*
+server_data/
 !uploads/.gitkeep

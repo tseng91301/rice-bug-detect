@@ -21,7 +21,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-UPLOAD_DIR = "uploads"
+UPLOAD_DIR = "server_data/uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 # Initialize DB on startup
@@ -90,7 +90,7 @@ def get_history():
     return database.get_history()
 
 # Serve uploads and frontend
-app.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
+app.mount(f"/{UPLOAD_DIR}", StaticFiles(directory=UPLOAD_DIR), name=UPLOAD_DIR)
 app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
 
 if __name__ == "__main__":

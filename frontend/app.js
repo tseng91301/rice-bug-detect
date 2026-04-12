@@ -214,8 +214,8 @@ async function loadHistory() {
 
   historyList.innerHTML = history.map(item => {
     // Fallback for legacy records
-    const thumbPath = (item.thumbnail_path || item.image_path).replace('uploads/', '/uploads/');
-    const origPath = (item.original_path || item.image_path).replace('uploads/', '/uploads/');
+    const thumbPath = (item.thumbnail_path || item.image_path).replace('server_data/', '/server_data/');
+    const origPath = (item.original_path || item.image_path).replace('server_data/', '/server_data/');
     console.log(thumbPath);
     console.log(origPath);
 

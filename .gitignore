@@ -2,7 +2,7 @@ venv/
 __pycache__/
 model_repository/
 saved_models/
-rice_bug.db
+server_data/
 uploads/
 .env
 dataset/
