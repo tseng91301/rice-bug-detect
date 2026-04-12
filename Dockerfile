@@ -6,13 +6,15 @@ WORKDIR /app
 
 # 安裝系統依賴項目 (用於圖像處理相關套件可能需要的函式庫)
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libgl1-mesa-glx \
+    build-essential \
+    python3-dev \
+    libgl1 \
     libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
 # 先複製 requirements.txt 並安裝 Python 套件 (利用 Docker cache)
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY requirements.server.txt .
+RUN pip install --no-cache-dir -r requirements.server.txt
 
 # 複製其餘程式碼 (排除 .dockerignore 中指定的項目)
 COPY . .

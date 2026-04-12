@@ -1,0 +1,13 @@
+# 核心深度學習框架
+numpy
+
+# 圖像處理
+Pillow
+
+# API 服務與後端
+fastapi
+uvicorn
+python-multipart
+
+# Triton Client (包含 HTTP 支援)
+tritonclient[http]
