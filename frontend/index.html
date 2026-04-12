@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>米蟲辨識系統 - Rice Bug Detection</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>米蟲辨識系統</h1>
+  </header>
+
+  <main>
+    <div class="card animate">
+      <h2 style="margin-bottom: 1.5rem;">上傳圖片</h2>
+      <div id="upload-zone" class="upload-zone">
+        <p>點擊或拖放圖片到此處</p>
+        <input type="file" id="file-input" hidden accept="image/*">
+      </div>
+      <button id="predict-btn" class="btn" style="width: 100%; justify-content: center; margin-top: 1.5rem; display: none;">
+        開始辨識
+      </button>
+    </div>
+
+    <div id="result-card" class="card" style="display: none;">
+      <h2 style="margin-bottom: 1.5rem;">辨識結果</h2>
+      <div id="results-list" class="results-grid"></div>
+
+      <div id="feedback-section" class="feedback-section">
+        <p>此辨識結果正確嗎？</p>
+        <div class="feedback-options">
+          <button id="correct-btn" class="btn" style="background: var(--accent);">
+            正確
+          </button>
+          <button id="incorrect-btn" class="btn" style="background: var(--danger);">
+            不正確
+          </button>
+        </div>
+
+        <div id="correction-form" class="correction-form">
+          <p style="margin-bottom: 1rem; color: var(--text-muted);">請選擇正確的類別：</p>
+          <select id="class-select"></select>
+          <input type="text" id="custom-class-input" placeholder="請輸入類別名稱" style="display: none; margin-bottom: 1rem; background: #0f172a; color: var(--text-main); border: 1px solid #334155; padding: 0.75rem; border-radius: 0.5rem; width: 100%;">
+          <button id="submit-feedback" class="btn" style="width: 100%; justify-content: center;">
+            提交修正
+          </button>
+        </div>
+        
+        <div id="thank-you" style="display: none; margin-top: 1rem; color: var(--accent); font-weight: 600; text-align: center;">
+          感謝您的反饋！
+        </div>
+      </div>
+
+      <img id="preview-image" class="image-preview">
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Rice Bug Detection System. Powered by Triton & ONNX.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

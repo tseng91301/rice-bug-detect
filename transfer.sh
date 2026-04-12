@@ -1,0 +1,1 @@
+scp -P 3040 -r model_repository/rice_bug_model server@192.168.23.11:/mnt/triton/models

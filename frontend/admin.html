@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>辨識紀錄 - 管理後台</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    .admin-container { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+    .history-card { position: relative; }
+    .history-card:hover { border-color: var(--primary); }
+    .correction-badge { font-size: 0.75rem; font-weight: 600; color: var(--danger); margin-top: 0.5rem; }
+    .history-details { display: flex; flex-direction: column; gap: 0.5rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>辨識紀錄管理</h1>
+    <nav>
+      <a href="/">首頁</a>
+      <a href="/admin.html" class="active">管理後台</a>
+    </nav>
+  </header>
+
+  <main class="admin-container">
+    <div id="history-list"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Rice Bug Detection System. Powered by Triton & ONNX.</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Use the logic in app.js or fetch here directly
+      loadHistory();
+    });
+  </script>
+</body>
+</html>
