@@ -6,3 +6,5 @@ server_data/
 uploads/
 .env
 dataset/
+backups/
+dataset_extend/
