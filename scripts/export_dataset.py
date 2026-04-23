@@ -35,6 +35,7 @@ def export_dataset():
             # Determine class name
             # Priority: Corrected class (if is_correct is false), else predicted class
             class_name = row['pred1_class']
+            if row['is_correct'] == 1: continue
             if row['is_correct'] == 0 and row['corrected_class']:
                 class_name = row['corrected_class']
             
